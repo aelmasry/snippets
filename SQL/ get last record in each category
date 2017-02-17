@@ -1,0 +1,13 @@
+select r.id, r.title, r.category_id
+from (select r.*,
+             (@rn := if(@c = category_id, @rn + 1,
+                        if(@c := category_id, 1, 1)
+                       )
+             ) as seqnum
+      from `articles` r cross join
+           (select @rn := 0, @c := -1) params
+      order by category_id
+      -- limit 1000
+     ) r
+where seqnum <= 5
+order by r.date asc

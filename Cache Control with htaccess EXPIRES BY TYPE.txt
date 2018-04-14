@@ -1,0 +1,60 @@
+# Cache Control with .htaccess EXPIRES BY TYPE
+# from http://forum.powweb.com/showthread.php?t=62786
+
+### turn on the Expires engine
+ExpiresActive On
+
+### expires after a month in the client's cache
+ExpiresByType image/gif A2592000
+ExpiresByType image/png A2592000
+ExpiresByType image/jpg A2592000
+ExpiresByType image/x-icon A2592000
+ExpiresByType application/pdf A2592000
+ExpiresByType application/x-javascript A2592000
+ExpiresByType text/plain A2592000
+
+### expires after 4.8 hours
+ExpiresByType text/css A17200
+
+# Please note that the "A" before the numbers above stands for Access.
+# This means that the stopwatch starts when a client accesses the file.
+# You can also use "M" for modified.
+
+# TIME CHEAT SHEET
+#      300   5 MIN
+#      600  10 MIN
+#      900  15 MIN
+#     1800  30 MIN
+#     2700  45 MIN
+#
+#     3600   1 HR
+#     7200   2 HR
+#    10800   3 HR
+#    14400   4 HR
+#    18000   5 HR
+#    36000  10 HR
+#    39600  11 HR
+#    43200  12 HR
+#    46800  13 HR
+#    50400  14 HR
+#    54000  15 HR
+#    86400  24 HR
+#
+#    86400   1 DAY
+#   172800   2 DAY
+#   259200   3 DAY
+#   345600   4 DAY
+#   432000   5 DAY
+#   518400   6 DAY
+#   604800   7 DAY
+#
+#   604800   1 WEEK
+#  1209600   2 WEEK
+#  1814400   3 WEEK
+#  2419200   4 WEEK
+#
+#  2419200   1 MONTH (FEBRUARY)
+#  2505600   1 MONTH (FEBRUARY LEAP YEAR)
+#  2592000   1 MONTH (APRIL, JUNE, SEPTEMBER, NOVEMBER)
+#  2678400   1 MONTH (JANUARY, MARCH, MAY, JULY, AUGUST, OCTOBER, DECEMBER)
+# 31536000  12 MONTH
